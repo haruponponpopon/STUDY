@@ -73,5 +73,5 @@ INSERT INTO jobs(id, name, salary) VALUES (9, '警察官', 555);
 -- SELECT * FROM members;
 -- DELETE FROM members;
 -- DELETE FROM members WHERE id>6;
-DELETE FROM members WHERE height>
+DELETE FROM members WHERE height>180 OR weught < 50;
 SELECT * FROM members;
