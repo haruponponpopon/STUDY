@@ -68,20 +68,12 @@ INSERT
 -- SUM(CASE WHEN category = '衣類' THEN selling_price
 --     ELSE 0 END) AS "衣類"
 -- FROM Products;
--- SELECT
--- SUM(CASE WHEN selling_price < 1000
---     THEN 1 ELSE 0 END) AS "低額商品",
--- SUM (CASE WHEN selling_price >= 1000 AND selling_price < 5000
---     THEN 1 ELSE 0 END) AS "中額商品",
--- SUM(CASE WHEN selling_price >= 5000
---     THEN 1 ELSE 0 END) AS "高額商品"
--- FROM Products;
 
 SELECT
-    SUM(CASE WHEN selling_price >= 5000
-        THEN 1 ELSE 0 END) AS "高額商品",
-    SUM(CASE WHEN selling_price >= 1000 AND selling_price < 5000
-        THEN 1 ELSE 0 END) AS "中額商品",
-    SUM(CASE WHEN selling_price < 1000
-        THEN 1 ELSE 0 END) AS "低額商品",
+SUM(CASE WHEN selling_price < 1000
+    THEN 1 ELSE 0 END) AS "低額商品",
+SUM(CASE WHEN selling_price >= 1000 AND selling_price < 5000
+    THEN 1 ELSE 0 END) AS "中額商品",
+SUM(CASE WHEN selling_price >= 5000
+    THEN 1 ELSE 0 END) AS "高額商品"
 FROM Products;
