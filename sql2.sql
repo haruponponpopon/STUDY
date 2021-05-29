@@ -77,3 +77,18 @@ SUM(CASE WHEN selling_price >= 1000 AND selling_price < 5000
 SUM(CASE WHEN selling_price >= 5000
     THEN 1 ELSE 0 END) AS "高額商品"
 FROM Products;
+
+SELECT season AS "シーズン", COUNT(*) AS "登録商品数"
+FROM (
+SELECT case WHEN registration_date
+                BETWEEN '2018-01-01' AND '2018-06-30'
+                THEN '2018年前半'
+            WHEN registration_date
+                BETWEEN '2018-07-01' AND '2018-12-31'
+                THEN '2018年後半'
+            WHEN registration_date
+                BETWEEN '2019-01-01' AND '2019-06-30'
+                THEN "2019年前半"
+            ELSE 0 END AS season
+FROM Products) AS Seasons
+GROUP BY season ORDER by COUNT(*);
