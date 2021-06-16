@@ -32,3 +32,28 @@ ls .git/
 https~はgithubの'code'という名前の緑のボタンから
 $git clone https://github.com/atom/atom.git
 ```
+# ファイル変更時  
+### ステージに変更を記録  
+どれか一つのコマンドでOK
+```
+全部  
+$git add .
+特定のファイル  
+$git add ファイル名/ディレクトリ名  
+```
+### コミット  
+どれか一つのコマンドでOK
+```
+gitのeditorが登録されたエディターで立ち上がる
+$git commit  
+gitのeditorを立ち上げたくないとき  
+$git commit -m "<メッセージ>"  
+変更点を見せてくれる  
+$git commit -v
+```
+`$git commit`が実行できないとき  [ここ](https://qiita.com/grca3/items/0771099a6750840721b1)  
+`$git commit`の後エディターに
+1行目に変更メッセージを書く  
+command+sしてcommand+q  
+ターミナルに戻ると変更した旨が記載されている  
+
