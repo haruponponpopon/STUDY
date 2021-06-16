@@ -29,6 +29,6 @@ ls .git/
 ```
 # 他のgithubレポジトリからcloneする  
 ```
-https~はgithubの緑のボタンから
+https~はgithubの'code'という名前の緑のボタンから
 $git clone https://github.com/atom/atom.git
 ```
