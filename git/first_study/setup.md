@@ -26,3 +26,9 @@ $git init
 $ls -a
 .gitの中身を見てみる  
 ls .git/  
+```
+# 他のgithubレポジトリからcloneする  
+```
+https~はgithubの緑のボタンから
+$git clone https://github.com/atom/atom.git
+```
