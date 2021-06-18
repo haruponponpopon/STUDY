@@ -17,19 +17,23 @@ $cat ~/.gitconfig
 ```
 # 新規プロジェクトをgitと連携   
 新規プロジェクトのディレクトリ配下に移動  
-```
 .gitディレクトリを作る  
 Initialized empty Git repository in /Users/~  
 と出力されればOK  
+``` 
 $git init  
+```
 隠れファイル(.gitとか)まで全部表示するコマンド  
+```
 $ls -a
+```
 .gitの中身を見てみる  
-ls .git/  
+```
+$ls .git/
 ```
 # 他のgithubレポジトリからcloneする  
-```
 https~はgithubの'code'という名前の緑のボタンから
+```
 $git clone https://github.com/atom/atom.git
 ```
 # ファイル変更時  
@@ -38,6 +42,7 @@ $git clone https://github.com/atom/atom.git
 ```
 全部  
 $git add .
+
 特定のファイル  
 $git add ファイル名/ディレクトリ名  
 ```
@@ -46,8 +51,10 @@ $git add ファイル名/ディレクトリ名
 ```
 gitのeditorが登録されたエディターで立ち上がる
 $git commit  
+
 gitのeditorを立ち上げたくないとき  
 $git commit -m "<メッセージ>"  
+
 変更点を見せてくれる  
 $git commit -v
 ```
