@@ -63,4 +63,3 @@ $git commit -v
 1行目に変更メッセージを書く  
 command+sしてcommand+q  
 ターミナルに戻ると変更した旨が記載されている  
-
