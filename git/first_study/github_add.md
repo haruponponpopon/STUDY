@@ -24,3 +24,19 @@ $git config --global alias.st status
 $git config --global alias.br branch
 $git config --global alias.co checkout
 ```
+# バージョン管理をしないファイルの設定  
+パスワードなどの機密情報が載ったファイルやチーム開発に関係ないプログラム実行時に生成されたキャッシュなどがこれに当たる。  
+.gitignoreファイルに指定する  
+.gitignoreファイルの中身
+```
+# #から始まる行はコメント  
+
+# 指定したファイルを除外  
+index.html
+#ルートディレクトリを指定  
+/root.html
+#ディレクトリ以下を除外  
+dir/
+# /以外の文字列にマッチ
+/*/*.css
+```
