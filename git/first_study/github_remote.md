@@ -25,12 +25,12 @@ $git branch -a
 ```
 とすると今いるブランチとフェッチしたブランチが表示される。  
 ```
-git checkout remotes/origin/master
+$git checkout remotes/origin/master
 ```
 とするとワークツリーの内容がremotes/origin/masterに切り替わる。
 再度
 ```
-git checkout master
+$git checkout master
 ```
 とすると元いたmasterブランチの内容がワークツリーに反映される。
 
