@@ -1,0 +1,97 @@
+-- 定義部分
+CREATE TABLE members
+    (
+        id     INTEGER NOT NULL,
+        name   CHAR(32),
+        height REAL,
+        weight REAL,
+        age INTEGER,
+        job_id INTEGER,
+        PRIMARY KEY (id)
+    )
+;
+
+
+CREATE TABLE jobs
+    (
+        id     INTEGER NOT NULL,
+        name   CHAR(32),
+        salary INTEGER,
+        PRIMARY KEY (id)
+    )
+ ;
+
+
+-- 入力部分
+INSERT
+    INTO members(id, name, height, weight, age, job_id)
+    VALUES
+        (1, '佐藤', 170.2, 65.2, 60, 4),
+        (2, '鈴木', 151.5, 50.3, 53, 2),
+        (3, '高橋', 182.1, 85.1, 31, 8),
+        (4, '田中', 163.5, 70.6, 36, 3),
+        (5, '渡辺', 157.8, 55.8, 62, 7),
+        (6, '伊藤', 173.0, 65.3, 75, 1),
+        (7, '山本', 166.4, 49.1, 25, 5),
+        (8, '中村', 144.1, 56.9, 45, 7),
+        (9, '小林', 168.7, 90.1, 38, 3),
+        (10, '加藤', 178.6, 78.5, 26, 6)
+;
+        
+INSERT
+    INTO jobs(id, name, salary)
+    VALUES
+        (1, '医師', 1232),
+        (2, '弁護士', 1028),
+        (3, 'SE', 515),
+        (4, '会計士', 1024),
+        (5, '薬剤師', 542),
+        (6, '保育士', 341),
+        (7, '大学教授', 1050),
+        (8, '塾講師', 361)
+;
+-- SELECT height,weight from members;
+-- SELECT height/100, '2018-04-01', '吉田' FROM members;
+-- SELECT name FROM members WHERE height >= 180;
+-- SELECT name FROM members WHERE height >= 170 AND weight <= 70;
+-- SELECT name FROM members WHERE height >= 180 OR height <= 160;
+-- SELECT COUNT(*) FROM members WHERE age >= 50;
+-- SELECT COUNT(*) AS "50歳以上の人数" FROM members WHERE age >= 50;
+-- SELECT height / 100 AS height_m,
+-- '2018-04-01' AS "測定日",
+-- '吉田' AS "測定者"
+-- FROM members;
+-- SELECT COUNT(*) FROM members WHERE age>=30 AND height >= 170;
+-- SELECT name, age FROM members ORDER BY age;
+-- SELECT name, age FROM members ORDER BY age DESC;
+-- SELECT * FROM members ORDER BY id;
+-- SELECT job_id, COUNT(*) FROM members GROUP BY job_id;
+-- SELECT job_id, AVG(height) FROM members GROUP BY job_id;
+-- SELECT job_id, COUNT(*) FROM members WHERE height <= 165 GROUP BY job_id;
+-- SELECT job_id, COUNT(*) FROM members
+-- GROUP BY job_id HAVING COUNT(*)=2;
+-- SELECT job_id, AVG(height) FROM members
+-- GROUP BY job_id HAVING AVG(height)>=170;
+-- SELECT * FROM members 
+-- INNER JOIN jobs ON jobs.id = members.job_id;
+-- SELECT members.name, jobs.salary FROM members 
+-- INNER JOIN jobs ON jobs.id = members.job_id;
+-- SELECT members.name, jobs.salary FROM members
+-- INNER JOIN jobs ON jobs.id = members.job_id 
+-- HAVING jobs.salary>=1000 ORDER BY jobs.salary DESC;
+-- SELECT members.name FROM members INNER JOIN jobs ON jobs.id = members.job_id
+-- WHERE members.weight>=50 and members.age<40 and jobs.salary>=500;
+-- SELECT name,height,weight,weight/height/height*10000 AS BMI FROM members
+-- WHERE weight/height/height*10000<=22 ORDER BY weight/height/height*10000;
+-- INSERT INTO members(id,name,height,weight,age,job_id)
+-- VALUES (11,"吉田",186.2,97.1,23,5);
+-- SELECT * FROM members;
+-- INSERT INTO jobs(id,name,salary)
+-- VALUES (9,'宇宙飛行士',500);
+-- SELECT * FROM jobs;
+-- UPDATE members SET age=30;
+-- SELECT * FROM members;
+-- UPDATE members SET height=172.1 WHERE id = 1;
+-- SELECT * FROM members;
+UPDATE members SET age=age+1;
+SELECT * FROM members;
